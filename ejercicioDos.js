@@ -11,35 +11,22 @@
 
 // "Metodo Split()"
 
-let pilotoUno = {
-  nombre:'kevin durant',
-  codigo:'ARQ2555',
-  nave: 'Sara Bel-Sun'
-}
+let bdTripulantes = [
+    'ARQ2555:-Kevin Durant',
+    'ARQ2556:-Derrick Roses',
+    'ARQ2557:-Zach lavine'
+]
+//Funcion tradicional
 
-let pilotoDos = {
-    nombre:'derrick rose',
-    codigo:'ARQ2556',
-    nave: 'Nodin Chavdri'
-}
-
-
-let pilotoTres = {
-    nombre:'stephen curry',
-    codigo:'ARQ2557',
-    nave:'Finn'
-}
-
-
-let tripulantes =  {
-    pilotoUno,
-    pilotoDos,
-    pilotoTres
-}
-
- function filtrarNombre(){
-    return piloto.nombre
-
+ function mostrarNombre(codigo){
+    
+    return mensaje = `Nombre del piloto --> ${codigo.split("-")[1]}`
  }
 
- console.log(filtrarNombre)
+ console.log(mostrarNombre( 'ARQ2555: -Kevin Durant'))
+
+ //Funcion de flecha
+
+ let mostrarNombreFlecha = (codigo) => mensaje = `Nombre del piloto --> ${codigo.split("-")[1]}` 
+
+ console.log(mostrarNombreFlecha('ARQ2557:-Zach lavine'))
