@@ -76,17 +76,47 @@ function generarMapas(cantidad) {
     generarMapas.forEach(function(planeta){
         if(planeta.nivelOxigeno < 0){
             planetaConOxigenoNegativo.push(planeta)
-        }else{
-            console.log("No hay planetas con oxigeno negativo") 
         }
     })
 
+    if(planetaConOxigenoNegativo > 0){
+       console.log`Todos los planetas tienen oxigenos`
+    }else{
+      planetaSinAgua.forEach(function(planeta){
+        console.log(`Planeta sin agua: ${planeta}`)
+      })
+    }
     return planetaConOxigenoNegativo;
  }
+
+ //Function encontrar planeta sin agua
+ function planetaSinAgua(generarMapas){
+    const planetaMenosAgua = {}
+
+    generarMapas.forEach(function(planeta){
+      if(planeta.volumenAgua === ""){
+        planetaMenosAgua.push(planeta)
+      }
+    })
+
+    if(planetaMenosAgua > 0){
+      console.log("Todos los planetas tienen agua")
+    }else{
+      planetaMenosAgua.forEach(function(planeta){
+          console.log (`PLaneta sin agua ${planeta}`)
+      })
+    }
+
+    return planetaMenosAgua
+ }
+
+
+
 
  const mapasGenerados = generarMapas(3)
 //   console.log(mapasGenerados);
 //   console.log(sumarAgua(mapasGenerados))
 //   console.log(sumarOxigeno(mapasGenerados))
   console.log(planetaOxigenoNegativo(mapasGenerados))
+  console.log(planetaSinAgua(mapasGenerados))
   
