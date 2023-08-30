@@ -12,14 +12,18 @@ const generarEdades = (min, max) => {
     return Math.floor(Math.random() * (max - min)) + min
 };
 
+let edades = []
+
 for (let x = 0; x <= 20; x++) {
-     console.log(generarEdades(15, 30))
+    edades.push(generarEdades(15, 30))
+    
 }
+console.log(edades)
 
 //Generar codigos
 
-let numeros = "0123456789"
-let letras = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOOPQRSTUVWXYZ"
+let numeros = "01234"
+let letras = "abcdefghijzABCDEFGHIJZ"
 let union = letras + numeros
 
 const generarCodigos = (longitud) => {
@@ -32,7 +36,20 @@ const generarCodigos = (longitud) => {
 }
 
 for (let j = 0; j < 20; j++) {
-    console.log(generarCodigos(20))
+    console.log(generarCodigos(5))
 }
+
+//Encontrar edad y saber si se repite
+let edadMayor = edades[0]
+
+for(let e = 1; e < edades.length; e++){
+    if(edades[e] > edadMayor){
+        edadMayor = edades[e]
+    }
+}
+
+
+console.log(`La edad mayor es ${edadMayor}`)
+
 
 
