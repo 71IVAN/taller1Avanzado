@@ -55,4 +55,58 @@ function recolectarDatos(nombre, planeta, edad, estatura) {
    
      console.log(recolectarDatosFlecha("juliana","Tada",19,1.90))
 
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////  
+
+     //Declarar funcion principal (Usando funcion traducional)
+     function crearPadawan(nombre,planeta,edad,altura,clasificarPadawan){
+      setTimeout(function(){
+         //Logica de la funcion principal
+         let padawan = {
+            nombre,
+            planeta,
+            edad,
+            altura
+         }
+
+         //Llamando la funcion callback
+         clasificarPadawan(padawan)
+      },3000)
+
+     }
+
+   //   declarando a la funcion callback
+   clasificarPadawan("julian","fasda", 19, 1.90, function(padawanA){
+      if(padawanA.edad < 15){
+         console.log(`Tu ${padawanA.nombre} tienes ${padawanA.edad} años por lo tanto tu clase sera el manejo de la fuerza`)
+      }else{
+         console.log(`Tu ${padawanA.nombre} tienes ${padawanA.edad} años por lo tanto tu clase sera el manejo del sable de luz`)
+      }
+   })
+
+
+    //Declarar funcion principal (USando funcion de flecha)
+    let crearPadawanFlecha = (nombre,planeta,edad,altura,clasificarPadawan) => {
+      setTimeout(function(){
+         //Logica de la funcion principal
+         let padawan = {
+            nombre,
+            planeta,
+            edad,
+            altura
+         }
+
+         //Llamando la funcion callback
+         clasificarPadawan(padawan)
+      
+      },3000)
+    }
+
+    //declarando funcion callback
+    clasificarPadawan("Luisca", "fordo", 12, 1.80, function(padawanA){
+      if(padawanA.edad < 15){
+         console.log(`Tu ${padawanA.nombre} tienes ${padawanA.edad} años por lo tanto tu clase sera el manejo de la fuerza`)
+      }else{
+         console.log(`Tu ${padawanA.nombre} tienes ${padawanA.edad} años por lo tanto tu clase sera el manejo de sable de luz `)
+      }
+    })
     
