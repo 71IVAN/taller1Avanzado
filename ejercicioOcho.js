@@ -20,13 +20,11 @@ function generarMapas(cantidad) {
   
     for (let i = 0; i < cantidad; i++) {
       const objeto = {
-        // Propiedades aleatorias
         nombrePlaneta: `Planeta ${i + 1}`,
         latitud: parseFloat((Math.random() * 1000).toFixed(1)),
         longitud: parseFloat((Math.random() * 100).toFixed(2)) ,
         nivelOxigeno: parseFloat((Math.random() * 0.09).toFixed(1)),
         volumenAgua: parseFloat((Math.random() * 10).toFixed(0))
-        // Agrega más propiedades aleatorias según tus necesidades
       };
   
       objetos.push(objeto);
