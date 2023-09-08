@@ -227,12 +227,10 @@ recibirAlimentos(function(alimentos){
    let suma = 0
    alimentar.forEach(function(energiaP){
       if(energiaP !== undefined)
-        suma += energiaP
-       
-   })
-
-  
    
+      suma += energiaP
+   })  
+
    console.log(`La sumatoria de energias es de ${suma}`)
 
 })
